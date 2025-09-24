@@ -1,0 +1,45 @@
+app/
+├─ build.gradle.kts
+├─ src/
+│  └─ main/
+│     ├─ AndroidManifest.xml
+│     ├─ java/com/example/app/
+│     │  ├─ App.kt                    # @HiltAndroidApp
+│     │  ├─ MainActivity.kt           # host NavHostFragment
+│     │  │
+│     │  ├─ core/                     # base classes + helpers
+│     │  │  ├─ BaseFragment.kt
+│     │  │  ├─ BaseViewModel.kt
+│     │  │  └─ extensions/
+│     │  │
+│     │  ├─ data/                     # data layer
+│     │  │  ├─ local/                 # Room dao/entity
+│     │  │  ├─ remote/                # Retrofit api/dto
+│     │  │  ├─ mapper/                # dto/entity <-> domain mapper
+│     │  │  └─ repository/            # impl của repo interface
+│     │  │
+│     │  ├─ domain/                   # business logic
+│     │  │  ├─ model/                 # domain model (entity thuần kotlin)
+│     │  │  ├─ repository/            # repo interface
+│     │  │  └─ usecase/               # các usecase
+│     │  │
+│     │  ├─ presentation/             # UI (fragments, viewmodel)
+│     │  │  ├─ home/
+│     │  │  │  ├─ HomeFragment.kt
+│     │  │  │  └─ HomeViewModel.kt
+│     │  │  ├─ settings/
+│     │  │  │  ├─ SettingsFragment.kt
+│     │  │  │  └─ SettingsViewModel.kt
+│     │  │  ├─ other/
+│     │  │  │  ├─ OtherFragment.kt
+│     │  │  │  └─ OtherViewModel.kt
+│     │  │  └─ common/                # adapter, custom view...
+│     │  │
+│     │  └─ di/                       # Hilt modules bind interface -> impl
+│     │
+│     └─ res/
+│        ├─ layout/activity_main.xml
+│        ├─ layout/fragment_home.xml
+│        ├─ layout/fragment_settings.xml
+│        ├─ layout/fragment_other.xml
+│        └─ navigation/nav_graph.xml
